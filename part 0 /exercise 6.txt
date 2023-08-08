@@ -1,0 +1,18 @@
+sequenceDiagram
+
+
+participant browser
+participant server
+participant user
+
+
+user-->>submit info and save
+browser->>server: POST https://studies.cs.helsinki.fi/exampleapp/new_note_spa
+note : the request content contain the note and the date as a json format
+
+activate server
+server-->>browser: code 201
+deactivate server
+
+
+note :the browser will push the new note to the current data
